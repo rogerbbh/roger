@@ -13,7 +13,7 @@ apt -y update &&  apt -y install unzip mysql-server libnss3 libatk1.0-0 libatk-b
 _install_traccar () {
 
 mysql -u root --execute="ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; GRANT ALL ON *.* TO 'root'@'localhost' WITH GRANT OPTION; FLUSH PRIVILEGES; CREATE DATABASE traccar;"
-wget https://github.com/traccar/traccar/releases/download/v5.2/traccar-windows-64-5.2.zip
+wget https://github.com/traccar/traccar/releases/download/v5.12/traccar-linux-64-5.12.zip
 unzip traccar-linux-*.zip && ./traccar.run
 cat > /opt/traccar/conf/traccar.xml << EOF
 <?xml version='1.0' encoding='UTF-8'?>
